@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/constant/app_color.dart';
+import 'package:flutter_application_1/routes.dart';
 import 'package:flutter_application_1/view/screen/onboarding.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -15,11 +17,24 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-     
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      theme:  ThemeData(
+        textTheme: const TextTheme(
+         displayLarge : TextStyle(        // old name is headLine1 /// headline2 is meduim
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color : AppColor.black,
+
+                        ),
+        bodyLarge :TextStyle(                  // old name is bodyText1
+                            height: 2,
+                            color: AppColor.grey,
+                            fontWeight: FontWeight.bold,
+                          ),
+        ),
+      
       ),
       home: Onboarding(),
+      routes:routes ,
     );
   }
 }

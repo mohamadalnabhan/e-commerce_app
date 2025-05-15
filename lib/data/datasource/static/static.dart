@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/core/constant/App_image_asset.dart';
+import 'package:flutter_application_1/core/constant/app_image_asset.dart';
 import 'package:flutter_application_1/data/model/onboarding_model.dart';
 import 'package:flutter_application_1/view/screen/onboarding.dart';
 

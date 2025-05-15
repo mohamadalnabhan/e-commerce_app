@@ -19,32 +19,27 @@ class CustomsliderOnboarding extends GetView<OnboardingControllerImp> {
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Text(
-                        onboardingList[index].title!,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
-                      const SizedBox(height: 80),
+                    SizedBox(height: 40,),
                       Image.asset(
                         onboardingList[index].img!,
                         width: 200,
                         height: 230,
                         fit: BoxFit.fill,
                       ),
-                      const SizedBox(height: 80),
+                       const SizedBox(height: 70),
+                      Text(
+                        onboardingList[index].title!,
+                        style: Theme.of(context).textTheme.displayLarge,
+                      ),
+                     
+                      const SizedBox(height: 70),
                       Container(
                         width: double.infinity,
                         alignment: Alignment.center,
                         child: Text(
                           onboardingList[index].body!,
                           textAlign: TextAlign.center,
-                          style: TextStyle(
-                            height: 2,
-                            color: AppColor.grey,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.bodyLarge
                         ),
                       ),
                     ],

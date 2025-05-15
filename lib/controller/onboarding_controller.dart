@@ -1,5 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/constant/app_routes.dart';
+import 'package:flutter_application_1/data/datasource/static/static.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 abstract class OnboardingController extends GetxController {
@@ -20,8 +24,12 @@ class  OnboardingControllerImp extends OnboardingController{
 
   @override
   next() {
-    currentPage++ ;
+    if(currentPage >= onboardingList.length-1){
+      Get.offAllNamed(AppRoutes.login);
+    }else {
+      currentPage++ ;
     pagecontroller.animateToPage(currentPage, duration: Duration(milliseconds: 900), curve: Curves.easeInOut);
+    }
   }
 
 
