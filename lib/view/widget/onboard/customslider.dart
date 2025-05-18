@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controller/onboarding_controller.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
+import 'package:flutter_application_1/core/constant/app_font_size.dart';
 import 'package:flutter_application_1/data/datasource/static/static.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 
@@ -29,7 +30,7 @@ class CustomsliderOnboarding extends GetView<OnboardingControllerImp> {
                        const SizedBox(height: 70),
                       Text(
                         onboardingList[index].title!,
-                        style: Theme.of(context).textTheme.displayLarge,
+                        style:AppFontSize.headline1,
                       ),
                      
                       const SizedBox(height: 70),
@@ -39,7 +40,7 @@ class CustomsliderOnboarding extends GetView<OnboardingControllerImp> {
                         child: Text(
                           onboardingList[index].body!,
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyLarge
+                          style: AppFontSize.bodyText1
                         ),
                       ),
                     ],
