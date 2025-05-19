@@ -39,7 +39,13 @@ class Login extends GetView<ChangeLocal> {
             CustomTextFormAuth(hintText: "13".tr, labelText: "19".tr, iconData: Icons.lock_outline , mycontroller: controller.password
             ),
             const SizedBox(height: 5,) , 
-            Text("14".tr, style: TextStyle(color:AppColor.grey ),textAlign: TextAlign.end,),
+            InkWell(
+              onTap: (){
+                controller.goToForgetPassword();
+              },
+              child:  Text("14".tr, style: TextStyle(color:AppColor.grey ),textAlign: TextAlign.end,), 
+            ),
+          
            const  SizedBox(height: 30,),
            Custombuttonauth(text: "15".tr ,onPressed: (){},),
            const SizedBox(height: 30,),

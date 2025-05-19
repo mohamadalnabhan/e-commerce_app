@@ -29,6 +29,9 @@ class MyApp extends StatelessWidget {
     return GetBuilder<ChangeLocal>(
       builder: (controller) {
         return GetMaterialApp(
+          theme: ThemeData(
+            fontFamily:"Cairo"
+          ),
           translations: Mytranslation(),
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
