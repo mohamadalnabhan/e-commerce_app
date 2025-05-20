@@ -67,7 +67,9 @@ class Signup extends GetView<ChangeLocal> {
               textAlign: TextAlign.end,
             ),
             const SizedBox(height: 30),
-            Custombuttonauth(text: "17".tr, onPressed: () {}),
+            Custombuttonauth(text: "17".tr, onPressed: () {
+              controller.signup();
+            }),
             const SizedBox(height: 30),
             Customtextsignuporin(textOne: "16".tr, textTwo: "26".tr  , onTap: (){
             print("printed");

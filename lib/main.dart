@@ -4,7 +4,7 @@ import 'package:flutter_application_1/core/localization/change_local.dart';
 import 'package:flutter_application_1/core/localization/transliation.dart';
 import 'package:flutter_application_1/core/services/myservices.dart';
 import 'package:flutter_application_1/routes.dart';
-import 'package:flutter_application_1/view/screen/auth/language.dart';
+import 'package:flutter_application_1/view/screen/language.dart';
 import 'package:flutter_application_1/view/screen/onboarding.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
