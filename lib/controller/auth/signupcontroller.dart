@@ -3,11 +3,13 @@ import 'package:flutter_application_1/core/constant/app_routes.dart';
 import 'package:get/get.dart';
 
 abstract class Signupcontroller extends GetxController {
-  signup();
+
   goToSignin();
+  signupValidate();
 }
 
 class signupcontrollerImp extends Signupcontroller {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController username;
   late TextEditingController email;
   late TextEditingController phoneNbr;
@@ -17,10 +19,19 @@ class signupcontrollerImp extends Signupcontroller {
     Get.toNamed(AppRoutes.login);
   }
 
+
+
   @override
-  signup() {
-    Get.offNamed(AppRoutes.checkEmail);
+  signupValidate() {
+    var formdata = formstate.currentState;
+  if (formdata != null && formdata!.validate()) {
+      Get.offNamed(AppRoutes.verifyCode);
+      
+    } else {
+      return "an error happened";
+    }
   }
+
   @override
   void onInit() {
     username = TextEditingController();
@@ -31,7 +42,7 @@ class signupcontrollerImp extends Signupcontroller {
     super.onInit();
   }
 
-  void dispoe() {
+  void dispose() {
     username.dispose();
     email.dispose();
     phoneNbr.dispose();
