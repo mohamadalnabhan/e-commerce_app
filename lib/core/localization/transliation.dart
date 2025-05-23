@@ -44,7 +44,9 @@ class Mytranslation extends Translations {
           "35": "الكلمة الجديدة",
           "36": "تم اعادة تعيين كلمة المرور بنجاح",
           "37": "تهانينا",
-          "38": "تم التسجيل بنجاح"
+          "38": "تم التسجيل بنجاح",
+          "50" :"تنبيه",
+          "51" : "هل أنت متأكد من أنك تريد إغلاق التطبيق؟"
         },
         "en": {
           "1": "Choose Language",
@@ -88,7 +90,9 @@ class Mytranslation extends Translations {
           "35": "New Password",
           "36": "Password has been reset successfully",
           "37": "congratulations",
-          "38": "successfully registered"
+          "38": "successfully registered",
+          "50" : "alert",
+          "51" : "Are you sure you want to close the app?",
         }
       };
 }

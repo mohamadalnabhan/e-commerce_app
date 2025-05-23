@@ -13,6 +13,13 @@ class logincontrollerImp extends loginController {
 
   late TextEditingController email;
   late TextEditingController password;
+
+ bool showpassword  = true; 
+
+  showPassword(){
+    showpassword = showpassword == true ? false : true ;
+    update() ;
+  }
   @override
   goToForgetPassword() {
     // TODO: implement goToForgetPassword
