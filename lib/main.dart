@@ -16,10 +16,8 @@ void main() async {
   await initialServices();
   runApp(const MyApp());
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> bf794f7b00292b5c2e1d0ef2feba4e44f9d8cdbb
+
 Future<void> initialServices() async {
   await Get.putAsync(() => MyServices().init());
   Get.put(ChangeLocal());
@@ -33,25 +31,17 @@ class MyApp extends StatelessWidget {
     return GetBuilder<ChangeLocal>(
       builder: (controller) {
         return GetMaterialApp(
-<<<<<<< HEAD
-          theme: ThemeData(fontFamily: "Cairo"),
-          translations: Mytranslation(),
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          locale: controller.language,
-          //routes: routes,
-          getPages: getPages,
-=======
           theme: ThemeData(
-            fontFamily:"Cairo"
+            fontFamily: "Cairo", // Single theme definition
+            // Add other theme properties here if needed
           ),
           translations: Mytranslation(),
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
-          locale: controller.language, // ✅ This now updates reactively
+          locale: controller.language,
+         // getPages: getPages,
           home: MyLanguage(),
           routes: routes,
->>>>>>> bf794f7b00292b5c2e1d0ef2feba4e44f9d8cdbb
         );
       },
     );

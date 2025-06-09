@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
+
 import 'package:flutter_application_1/core/middleware/my_middle_ware.dart';
-=======
->>>>>>> bf794f7b00292b5c2e1d0ef2feba4e44f9d8cdbb
+
 import 'package:flutter_application_1/view/screen/auth/forgetpassword/successresetpassword.dart';
 import 'package:flutter_application_1/view/screen/auth/successsignup.dart';
 import 'package:flutter_application_1/core/constant/app_routes.dart';
@@ -14,42 +13,6 @@ import 'package:flutter_application_1/view/screen/auth/login.dart';
 
 import 'package:flutter_application_1/view/screen/auth/signup.dart';
 import 'package:flutter_application_1/view/screen/auth/verifysignup.dart';
-<<<<<<< HEAD
-import 'package:flutter_application_1/view/screen/language.dart';
-
-import 'package:flutter_application_1/view/screen/onboarding.dart';
-import 'package:get/get_navigation/src/routes/get_route.dart';
-import 'package:path/path.dart';
-
-List<GetPage> getPages = [
-  GetPage(name: "/", page: () => MyLanguage(), middlewares: [MyMiddleWare()]),
-  GetPage(name: AppRoutes.login, page: () => Login()),
-  GetPage(name: AppRoutes.onboarding, page: () => Onboarding()),
-  GetPage(name: AppRoutes.signup, page: () => Signup()),
-  GetPage(name: AppRoutes.forgetPassword, page: () => Forgetpassword()),
-  GetPage(name: AppRoutes.verifyCode, page: () => Verifycode()),
-  GetPage(name: AppRoutes.resetPassowrd, page: () => Resetpassword()),
-  GetPage(name: AppRoutes.successSignup, page: () => Successsignup()),
-  GetPage(
-    name: AppRoutes.resetPasswordSuccess,
-    page: () => Successresetpassword(),
-  ),
-  GetPage(name: AppRoutes.verifySignup, page: () => Verifysignup()),
-];
-
-// Map<String, Widget Function(BuildContext)> routess = {
-//   AppRoutes.login: (context) => Login(),
-//   AppRoutes.onboarding: (context) => Onboarding(),
-//   AppRoutes.signup: (context) => Signup(),
-//   AppRoutes.forgetPassword: (context) => Forgetpassword(),
-//   AppRoutes.verifyCode: (context) => Verifycode(),
-//   AppRoutes.resetPassowrd: (context) => Resetpassword(),
-//   AppRoutes.successSignup: (context) => Successsignup(),
-//   AppRoutes.resetPasswordSuccess: (context) => Successresetpassword(),
-
-//   AppRoutes.verifySignup :(context) => Verifysignup(),
-// };
-=======
 
 import 'package:flutter_application_1/view/screen/onboarding.dart';
 import 'package:path/path.dart';
@@ -66,4 +29,3 @@ Map<String, Widget Function(BuildContext)> routes = {
 
   AppRoutes.verifySignup :(context) => Verifysignup(),
 };
->>>>>>> bf794f7b00292b5c2e1d0ef2feba4e44f9d8cdbb
