@@ -1,4 +1,5 @@
 class AppRoutes {
+  static final String language = "/language";
   static final String login = "/login";
   static final String onboarding = "/onboarding";
   static final String signup = "/signup";

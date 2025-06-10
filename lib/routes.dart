@@ -13,19 +13,42 @@ import 'package:flutter_application_1/view/screen/auth/login.dart';
 
 import 'package:flutter_application_1/view/screen/auth/signup.dart';
 import 'package:flutter_application_1/view/screen/auth/verifysignup.dart';
+import 'package:flutter_application_1/view/screen/language.dart';
 
 import 'package:flutter_application_1/view/screen/onboarding.dart';
+import 'package:flutter_application_1/view/test_view.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
+import 'package:image_pickers/image_pickers.dart';
 import 'package:path/path.dart';
 
-Map<String, Widget Function(BuildContext)> routes = {
-  AppRoutes.login: (context) => Login(),
-  AppRoutes.onboarding: (context) => Onboarding(),
-  AppRoutes.signup: (context) => Signup(),
-  AppRoutes.forgetPassword: (context) => Forgetpassword(),
-  AppRoutes.verifyCode: (context) => Verifycode(),
-  AppRoutes.resetPassowrd: (context) => Resetpassword(),
-  AppRoutes.successSignup: (context) => Successsignup(),
-  AppRoutes.resetPasswordSuccess: (context) => Successresetpassword(),
 
-  AppRoutes.verifySignup :(context) => Verifysignup(),
-};
+
+List<GetPage<dynamic>> getPages = [
+  // GetPage(name: AppRoutes.language, page: () => MyLanguage(),
+  // middlewares: [MyMiddleWare()]),
+    GetPage(name: "/", page: () => TestView(),),
+  GetPage(name: AppRoutes.login, page: () => Login(),),
+  GetPage(name: AppRoutes.login, page: () => Login(),),
+  GetPage(name: AppRoutes.onboarding, page: () => Onboarding()),
+  GetPage(name: AppRoutes.signup, page: () => Signup()),
+  GetPage(name: AppRoutes.forgetPassword, page: () => Forgetpassword()),
+  GetPage(name: AppRoutes.verifyCode, page: () => Verifycode()),
+  GetPage(name: AppRoutes.resetPassowrd, page: () => Resetpassword()),
+  GetPage(name: AppRoutes.successSignup, page: () => Successsignup()),
+  GetPage(name: AppRoutes.resetPasswordSuccess, page: () => Successresetpassword()),
+  GetPage(name: AppRoutes.verifySignup, page: () => Verifysignup()),
+];
+
+
+// Map<String, Widget Function(BuildContext)> routes = {
+//   AppRoutes.login: (context) => Login(),
+//   AppRoutes.onboarding: (context) => Onboarding(),
+//   AppRoutes.signup: (context) => Signup(),
+//   AppRoutes.forgetPassword: (context) => Forgetpassword(),
+//   AppRoutes.verifyCode: (context) => Verifycode(),
+//   AppRoutes.resetPassowrd: (context) => Resetpassword(),
+//   AppRoutes.successSignup: (context) => Successsignup(),
+//   AppRoutes.resetPasswordSuccess: (context) => Successresetpassword(),
+
+//   AppRoutes.verifySignup :(context) => Verifysignup(),
+// };

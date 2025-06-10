@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/binding/initialbinding.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
 import 'package:flutter_application_1/core/localization/change_local.dart';
 import 'package:flutter_application_1/core/localization/transliation.dart';
@@ -39,9 +40,10 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           locale: controller.language,
-         // getPages: getPages,
-          home: MyLanguage(),
-          routes: routes,
+          initialBinding:Initialbind() ,
+          getPages: getPages,
+
+          // routes: routes,
         );
       },
     );
