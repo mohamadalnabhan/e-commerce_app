@@ -24,9 +24,9 @@ import 'package:path/path.dart';
 
 
 List<GetPage<dynamic>> getPages = [
-  // GetPage(name: AppRoutes.language, page: () => MyLanguage(),
-  // middlewares: [MyMiddleWare()]),
-    GetPage(name: "/", page: () => TestView(),),
+   GetPage(name: "/", page: () => MyLanguage(),
+   middlewares: [MyMiddleWare()]),
+    // GetPage(name: "/", page: () => TestView(),),
   GetPage(name: AppRoutes.login, page: () => Login(),),
   GetPage(name: AppRoutes.login, page: () => Login(),),
   GetPage(name: AppRoutes.onboarding, page: () => Onboarding()),

@@ -3,6 +3,7 @@ enum StatusRequest {
   success,
   failure,
   serverFail,
+  serverException,
   offlineFailure,
 
 }

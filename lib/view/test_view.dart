@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/controller/test_controller.dart';
+import 'package:flutter_application_1/core/class/handling_data_view.dart';
 import 'package:flutter_application_1/core/class/status_request.dart';
 import 'package:get/get.dart';
 import 'package:get/instance_manager.dart';
@@ -20,20 +21,13 @@ class TestView extends StatelessWidget {
         titleTextStyle:TextStyle(color: Colors.amber) ,
       ),
       body:GetBuilder<TestController>(builder: (controller){
-        if(controller.statusRequest == StatusRequest.loading){
-          return const Center(child: Text("loading.....") ,);
-        }else if(controller.statusRequest == StatusRequest.serverFail){
-           return const Center(child: Text("server fail") ,);
-        }else if(controller.statusRequest == StatusRequest.offlineFailure){
-         return const Center(child: Text("online issue") ,); 
-        }else{
-          return ListView.builder(
+       return HandlingDataView(statusRequest:controller.statusRequest , widget: ListView.builder(
             itemCount: controller.data.length,
             itemBuilder: (context, index) {
               return Text("${controller.data}");
             },
-          );
-        }
+          ));
+      
       }),
     );
   }
