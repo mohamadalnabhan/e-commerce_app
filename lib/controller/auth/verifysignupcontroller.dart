@@ -35,7 +35,7 @@ class VerifySignupcontrollerImp extends VerifySignupcontroller {
       } else {
         Get.defaultDialog(
           title: "warning",
-          middleText: "email or password is already in use",
+          middleText: "verification code is not correct",
         );
         statusRequest = StatusRequest.failure;
       }

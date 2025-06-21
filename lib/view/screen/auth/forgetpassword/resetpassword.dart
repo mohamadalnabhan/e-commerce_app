@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/controller/auth/forgetpassword.dart';
-import 'package:flutter_application_1/controller/auth/resetpasswordcontroller.dart';
+import 'package:flutter_application_1/controller/forgetpassword/forgetpasswordcontroller.dart';
+import 'package:flutter_application_1/controller/forgetpassword/resetpasswordcontroller.dart';
 import 'package:flutter_application_1/controller/auth/signupcontroller.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
 import 'package:flutter_application_1/core/constant/app_font_size.dart';

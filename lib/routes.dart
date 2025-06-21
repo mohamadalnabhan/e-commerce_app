@@ -13,6 +13,7 @@ import 'package:flutter_application_1/view/screen/auth/login.dart';
 
 import 'package:flutter_application_1/view/screen/auth/signup.dart';
 import 'package:flutter_application_1/view/screen/auth/verifysignup.dart';
+import 'package:flutter_application_1/view/screen/home_page.dart';
 import 'package:flutter_application_1/view/screen/language.dart';
 
 import 'package:flutter_application_1/view/screen/onboarding.dart';
@@ -28,7 +29,6 @@ List<GetPage<dynamic>> getPages = [
    middlewares: [MyMiddleWare()]),
     // GetPage(name: "/", page: () => TestView(),),
   GetPage(name: AppRoutes.login, page: () => Login(),),
-  GetPage(name: AppRoutes.login, page: () => Login(),),
   GetPage(name: AppRoutes.onboarding, page: () => Onboarding()),
   GetPage(name: AppRoutes.signup, page: () => Signup()),
   GetPage(name: AppRoutes.forgetPassword, page: () => Forgetpassword()),
@@ -37,6 +37,7 @@ List<GetPage<dynamic>> getPages = [
   GetPage(name: AppRoutes.successSignup, page: () => Successsignup()),
   GetPage(name: AppRoutes.resetPasswordSuccess, page: () => Successresetpassword()),
   GetPage(name: AppRoutes.verifySignup, page: () => Verifysignup()),
+  GetPage(name: AppRoutes.homePage, page: () => HomePage(),),
 ];
 
 

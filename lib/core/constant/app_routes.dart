@@ -8,6 +8,7 @@ class AppRoutes {
   static final String resetPassowrd = "/resetpassword";
   static final String resetPasswordSuccess = "/successresetpassword";
   static final String successSignup = "/successsignup";
-
   static final String verifySignup  = "/verifysignup";
+  //
+    static final String homePage = "/homePage";
 }

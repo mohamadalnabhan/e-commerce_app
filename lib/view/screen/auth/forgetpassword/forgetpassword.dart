@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/controller/auth/forgetpassword.dart';
+import 'package:flutter_application_1/controller/forgetpassword/forgetpasswordcontroller.dart';
 import 'package:flutter_application_1/controller/auth/signupcontroller.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
 import 'package:flutter_application_1/core/constant/app_font_size.dart';
@@ -47,7 +47,7 @@ class Forgetpassword extends GetView<ChangeLocal> {
             ),
             const SizedBox(height: 30),
             Custombuttonauth(text: "17".tr, onPressed: () {
-              controller.goToVerifyCode() ;
+              controller.checkEmail() ;
             }),
           ],
         ),

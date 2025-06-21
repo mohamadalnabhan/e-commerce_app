@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/controller/auth/forgetpassword.dart';
+import 'package:flutter_application_1/controller/forgetpassword/forgetpasswordcontroller.dart';
 import 'package:flutter_application_1/controller/auth/signupcontroller.dart';
-import 'package:flutter_application_1/controller/auth/verifycodecontroller.dart';
+import 'package:flutter_application_1/controller/forgetpassword/verifycodecontroller.dart';
 import 'package:flutter_application_1/controller/auth/verifysignupcontroller.dart';
 import 'package:flutter_application_1/core/class/status_request.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
