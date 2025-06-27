@@ -3,6 +3,7 @@ import 'package:flutter_application_1/controller/forgetpassword/forgetpasswordco
 import 'package:flutter_application_1/controller/auth/signupcontroller.dart';
 import 'package:flutter_application_1/controller/forgetpassword/verifycodecontroller.dart';
 import 'package:flutter_application_1/controller/auth/verifysignupcontroller.dart';
+import 'package:flutter_application_1/core/class/handling_data_view.dart';
 import 'package:flutter_application_1/core/class/status_request.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
 import 'package:flutter_application_1/core/constant/app_font_size.dart';
@@ -31,10 +32,7 @@ class Verifysignup extends GetView<ChangeLocal> {
       ),
       body: GetBuilder<VerifySignupcontrollerImp>(
         builder:
-            (controller) =>
-                controller.statusRequest == StatusRequest.loading
-                    ? Center(child: Text("loading"))
-                    : Container(
+              (controller)=> HandlingDataRequest(statusRequest: controller.statusRequest  , widget:  Container(
                       padding: EdgeInsets.symmetric(
                         vertical: 15,
                         horizontal: 35,
@@ -70,6 +68,7 @@ class Verifysignup extends GetView<ChangeLocal> {
                       ),
                     ),
       ),
+      )
     );
   }
 }

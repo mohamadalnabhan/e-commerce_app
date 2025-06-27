@@ -11,10 +11,12 @@ MyServices myservices = Get.find();
 
 RouteSettings? redirect(String? route){
 
-if(myservices.sharedPreferences.getString("onboarding") == "1"){
+if(myservices.sharedPreferences.getString("step") == "2"){
+ return RouteSettings(name: AppRoutes.homePage);
+}
+if(myservices.sharedPreferences.getString("step") == "1"){
  return RouteSettings(name: AppRoutes.login);
 }
-
 }
 
 

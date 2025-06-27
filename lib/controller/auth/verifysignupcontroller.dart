@@ -15,7 +15,7 @@ class VerifySignupcontrollerImp extends VerifySignupcontroller {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
   String? email;
 
-  StatusRequest? statusRequest;
+ StatusRequest statusRequest = StatusRequest.none ;
   List data = [];
   @override
   goSuccessSignup(verificationCode) async {

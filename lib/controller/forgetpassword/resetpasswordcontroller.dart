@@ -15,7 +15,7 @@ class ResetpasswordcontrollerImp extends Resetpasswordcontroller {
   late TextEditingController password;
  late TextEditingController repassword;
   String? email ; 
-StatusRequest? statusRequest ; 
+ StatusRequest statusRequest = StatusRequest.none ;
 ResetPasswordData resetPasswordData = ResetPasswordData(Get.find());
   @override
   ResetPass() {}

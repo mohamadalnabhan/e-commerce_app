@@ -14,7 +14,7 @@ class VerifycodecontrollerImp extends Verifycodecontroller {
   String? email;
   VerifyCodeForgetPasswordData verifyCodeForgetPasswordData =
       VerifyCodeForgetPasswordData(Get.find());
-  StatusRequest? statusRequest;
+ StatusRequest statusRequest = StatusRequest.none ;
   @override
   goToResetPassword(Verifycode) async {
     statusRequest = StatusRequest.loading;

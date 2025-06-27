@@ -13,7 +13,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 abstract class OnboardingController extends GetxController {
 
   late PageController pagecontroller ; 
-
+  MyServices myServices = Get.find();
   next();
 
 
@@ -29,7 +29,7 @@ class  OnboardingControllerImp extends OnboardingController{
   @override
   next() {
     if(currentPage >= onboardingList.length-1){
-
+      myServices.sharedPreferences.setString("step", "1");
       Get.offAllNamed(AppRoutes.login);
     }else {
       currentPage++ ;

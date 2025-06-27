@@ -10,8 +10,8 @@ class LoginData{
   postdata(String email , String password)async {
    try {
      var response = await crud.postRequest(LinkApi.Login, {
-      "email" : email , 
-      "password" :  password,
+      "email" :email , 
+      "password" :password,
     });
          return response.fold((l) => l, (r) => r);
     } catch (e) {

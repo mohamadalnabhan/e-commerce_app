@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controller/auth/logincontroller.dart';
+import 'package:flutter_application_1/core/class/handling_data_view.dart';
 import 'package:flutter_application_1/core/class/status_request.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
 import 'package:flutter_application_1/core/constant/app_font_size.dart';
@@ -33,10 +34,7 @@ class Login extends GetView<ChangeLocal> {
         onWillPop: AlertExitApp,
         child: GetBuilder<logincontrollerImp>(
           builder:
-              (controller) =>
-                  controller.statusRequest == StatusRequest.loading
-                      ? const Center(child: Text("loading ..."))
-                      : Container(
+                 (controller)=> HandlingDataRequest(statusRequest: controller.statusRequest  , widget:  Container(
                         padding: EdgeInsets.symmetric(
                           vertical: 15,
                           horizontal: 35,
@@ -117,6 +115,7 @@ class Login extends GetView<ChangeLocal> {
                       ),
         ),
       ),
+      )
     );
   }
 }
