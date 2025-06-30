@@ -1,5 +1,10 @@
 class LinkApi {
   static String server = "https://ecommerce-backend-yflb.onrender.com";
+
+  ////// image
+  static String imageStatic = "$server/uploads";
+  static String imageCategories = "$imageStatic/categories_up";
+  static String imageItems = "$imageStatic/items_up";
   static String test = "$server/mail/test.php";
   // ================ auth
   static String Signup = "$server/auth/signup.php";
@@ -11,4 +16,6 @@ class LinkApi {
   static String checkEmail = "$server/forgetpassword/checkemail.php";
   static String verifyCodeForgetPassword =
       "$server/forgetpassword/verifycode.php";
+  ///// home
+  static String homePage = "$server/home.php";
 }
