@@ -27,7 +27,7 @@ class HomePageControllerImp extends HomePageController {
 
   @override
   void onInit() {
-     initialData();
+    initialData();
     getData();
    
     super.onInit();
@@ -43,7 +43,10 @@ class HomePageControllerImp extends HomePageController {
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
         categories.addAll(response['categories']);
+        
+        items.addAll(response['items']);
       }
+      update() ; 
     } else {
       statusRequest = StatusRequest.failure;
     }
