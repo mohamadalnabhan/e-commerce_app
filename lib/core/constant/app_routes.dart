@@ -11,4 +11,5 @@ class AppRoutes {
   static final String verifySignup  = "/verifysignup";
   //
     static final String homePage = "/homePage";
+    static final String itemsPage = "/items";
 }

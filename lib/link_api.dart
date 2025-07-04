@@ -18,4 +18,5 @@ class LinkApi {
       "$server/forgetpassword/verifycode.php";
   ///// home
   static String homePage = "$server/home.php";
+  static String itemsPage = "$server/";
 }

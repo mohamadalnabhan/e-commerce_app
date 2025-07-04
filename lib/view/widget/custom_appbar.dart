@@ -8,8 +8,8 @@ class CustomAppbar extends StatelessWidget {
   const CustomAppbar({
     super.key,
     required this.appBarHint,
-    this.onPressed,
-    this.onPressedSearch,
+   required this.onPressed,
+    required this.onPressedSearch,
   });
 
   @override

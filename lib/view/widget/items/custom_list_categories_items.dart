@@ -5,8 +5,8 @@ import 'package:flutter_application_1/data/model/categories_model.dart';
 import 'package:flutter_application_1/link_api.dart';
 import 'package:get/get.dart';
 
-class CustomListCategoriesHome extends GetView<HomePageControllerImp> {
-  const CustomListCategoriesHome({super.key});
+class CustomListCategoriesItems extends GetView<HomePageControllerImp> {
+  const CustomListCategoriesItems({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class Categories extends GetView<HomePageControllerImp> {
     return InkWell(
       onTap: (){
     
-          controller.goToItems(controller.categories , i!);
+          // controller.goToItems(controller.categories , i!);
       },
       child: Column(
         children: [

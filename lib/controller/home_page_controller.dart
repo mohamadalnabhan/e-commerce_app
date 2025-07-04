@@ -4,11 +4,13 @@ import 'package:flutter_application_1/core/functions/data_handling.dart';
 import 'package:flutter_application_1/core/services/myservices.dart';
 import 'package:flutter_application_1/data/datasource/remote/auth/signup_data.dart';
 import 'package:flutter_application_1/data/datasource/remote/home_data.dart';
+import 'package:flutter_application_1/view/widget/home/custom_list_categories.dart';
 import 'package:get/get.dart';
 
 abstract class HomePageController extends GetxController {
   initialData();
   getData();
+  goToItems(List categories , int selected);
 }
 
 class HomePageControllerImp extends HomePageController {
@@ -50,5 +52,15 @@ class HomePageControllerImp extends HomePageController {
     } else {
       statusRequest = StatusRequest.failure;
     }
+  }
+  
+  @override
+  goToItems(categories , selected) {
+    
+    Get.offNamed(AppRoutes.itemsPage ,arguments: {
+      "categories" : categories , 
+      "selected" : selected ,
+
+    });
   }
 }

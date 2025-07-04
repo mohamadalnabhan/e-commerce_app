@@ -6,7 +6,7 @@ import 'package:flutter_application_1/core/class/handling_data_view.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
 import 'package:flutter_application_1/core/functions/data_handling.dart';
 import 'package:flutter_application_1/link_api.dart';
-import 'package:flutter_application_1/view/widget/home/custom_appbar.dart';
+import 'package:flutter_application_1/view/widget/custom_appbar.dart';
 import 'package:flutter_application_1/view/widget/home/custom_card.dart';
 import 'package:flutter_application_1/view/widget/home/custom_list_categories.dart';
 import 'package:flutter_application_1/view/widget/home/custom_list_items_home.dart';
@@ -20,8 +20,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(HomePageControllerImp());
-    return Scaffold(
-      body: GetBuilder<HomePageControllerImp>(
+    return  GetBuilder<HomePageControllerImp>(
         builder:
             (controller) => Container(
               padding: EdgeInsets.symmetric(horizontal: 12),
@@ -32,18 +31,20 @@ class HomePage extends StatelessWidget {
                     onPressed: () {},
                     onPressedSearch: () {},
                   ),
-                const CustomCard(
+                  const CustomCard(
                     cardTitle: "summer Offer ",
                     cardBody: "cash back ",
                   ),
-                 CustomListCategoriesHome() , 
-                  const CustomTitleHome(title: "products for u") , 
                   const SizedBox(height: 10),
-                 CustomListItemsHome() , 
+                  const CustomTitleHome(title: "categories"),
+                  const SizedBox(height: 10,),
+                  CustomListCategoriesHome(),
+                  const CustomTitleHome(title: "products for you"),
+                  const SizedBox(height: 10),
+                  CustomListItemsHome(),
                 ],
               ),
-            ),
-      ),
+            )
     );
   }
 }

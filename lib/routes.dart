@@ -14,10 +14,13 @@ import 'package:flutter_application_1/view/screen/auth/login.dart';
 import 'package:flutter_application_1/view/screen/auth/signup.dart';
 import 'package:flutter_application_1/view/screen/auth/verifysignup.dart';
 import 'package:flutter_application_1/view/screen/home_page.dart';
+import 'package:flutter_application_1/view/screen/home_screen.dart';
+import 'package:flutter_application_1/view/screen/items.dart';
 import 'package:flutter_application_1/view/screen/language.dart';
 
 import 'package:flutter_application_1/view/screen/onboarding.dart';
 import 'package:flutter_application_1/view/test_view.dart';
+import 'package:flutter_application_1/view/widget/home/custom_list_items_home.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:image_pickers/image_pickers.dart';
 import 'package:path/path.dart';
@@ -37,7 +40,8 @@ List<GetPage<dynamic>> getPages = [
   GetPage(name: AppRoutes.successSignup, page: () => Successsignup()),
   GetPage(name: AppRoutes.resetPasswordSuccess, page: () => Successresetpassword()),
   GetPage(name: AppRoutes.verifySignup, page: () => Verifysignup()),
-  GetPage(name: AppRoutes.homePage, page: () => HomePage(),),
+  GetPage(name: AppRoutes.homePage, page: () => HomeScreen(),),
+  GetPage(name: AppRoutes.itemsPage, page: () => Items(),),
 ];
 
 
