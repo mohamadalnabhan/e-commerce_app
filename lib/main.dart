@@ -14,6 +14,7 @@ import 'package:image_pickers/image_pickers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
   await initialServices();
   runApp(const MyApp());
 }

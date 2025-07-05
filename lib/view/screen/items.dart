@@ -12,7 +12,7 @@ class Items extends StatelessWidget {
   Widget build(BuildContext context) {
     ItemsControllerImp controller = Get.put(ItemsControllerImp());
     return Scaffold(
-      body:GetBuilder<ItemsControllerImp>(builder: (controller)=>
+      body:
        Container(
         padding: EdgeInsets.all(12),
         child: ListView(
@@ -26,7 +26,7 @@ class Items extends StatelessWidget {
           ],
         ),
       ),
-      )
+      
     );
   }
 }

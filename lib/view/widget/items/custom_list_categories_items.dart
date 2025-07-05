@@ -12,6 +12,7 @@ class CustomListCategoriesItems extends GetView<HomePageControllerImp> {
 
   @override
   Widget build(BuildContext context) {
+  
     return Container(
       height: 100,
       child: ListView.separated(
