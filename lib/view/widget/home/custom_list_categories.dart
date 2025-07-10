@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/controller/home_page_controller.dart';
+import 'package:flutter_application_1/core/functions/translate_data.dart';
 import 'package:flutter_application_1/data/model/categories_model.dart';
 import 'package:flutter_application_1/link_api.dart';
 import 'package:get/get.dart';
 
-class CustomListCategoriesHome extends GetView<HomePageControllerImp> {
+class CustomListCategoriesHome extends StatelessWidget {
   const CustomListCategoriesHome({super.key});
 
   @override
   Widget build(BuildContext context) {
+    HomePageControllerImp controller = Get.find<HomePageControllerImp>();
+
     return Container(
       height: 100,
       child: ListView.separated(
@@ -18,7 +21,7 @@ class CustomListCategoriesHome extends GetView<HomePageControllerImp> {
         itemCount: controller.categories.length,
         itemBuilder: (context, index) {
           return Categories(
-                i : index ,
+            i: index,
             categoriesModel: CategoriesModel.fromJson(
               controller.categories[index],
             ),
@@ -31,16 +34,20 @@ class CustomListCategoriesHome extends GetView<HomePageControllerImp> {
 
 class Categories extends GetView<HomePageControllerImp> {
   final CategoriesModel categoriesModel;
-  final int? i ; 
-  const Categories({super.key, required this.categoriesModel , required this.i});
+  final int? i;
+  const Categories({super.key, required this.categoriesModel, required this.i});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
-    
-          controller.goToItems(controller.categories , i!);
+      onTap: () {
+      controller.goToItems(
+  controller.categories,
+  i!,
+  categoriesModel.categoriesId!.toString(), // Make 
+        );
       },
+
       child: Column(
         children: [
           Container(
@@ -56,7 +63,7 @@ class Categories extends GetView<HomePageControllerImp> {
             ),
           ),
           Text(
-            "${categoriesModel.categoriesNameEn}",
+            "${TranslateData(categoriesModel.categoriesNameEn , categoriesModel.categoriesNameAr)}",
             style: TextStyle(fontSize: 13, color: Colors.black),
           ),
         ],

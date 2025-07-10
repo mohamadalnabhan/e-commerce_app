@@ -19,6 +19,7 @@ import 'package:flutter_application_1/view/screen/items.dart';
 import 'package:flutter_application_1/view/screen/language.dart';
 
 import 'package:flutter_application_1/view/screen/onboarding.dart';
+import 'package:flutter_application_1/view/screen/products_view.dart';
 import 'package:flutter_application_1/view/test_view.dart';
 import 'package:flutter_application_1/view/widget/home/custom_list_items_home.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
@@ -42,6 +43,7 @@ List<GetPage<dynamic>> getPages = [
   GetPage(name: AppRoutes.verifySignup, page: () => Verifysignup()),
   GetPage(name: AppRoutes.homePage, page: () => HomeScreen(),),
   GetPage(name: AppRoutes.itemsPage, page: () => Items(),),
+    GetPage(name: AppRoutes.productsView, page: () => ProductsView(),),
 ];
 
 

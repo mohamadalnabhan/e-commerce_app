@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/controller/home_page_controller.dart';
 import 'package:flutter_application_1/controller/home_screen_controller.dart';
 import 'package:flutter_application_1/view/widget/home/custom_button_appbar.dart';
 import 'package:get/get.dart';
@@ -9,7 +10,8 @@ class CustomBottomAppbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomeScreenControllerImp());
+  HomePageControllerImp controller = Get.find<HomePageControllerImp>();
+
     return GetBuilder<HomeScreenControllerImp>(
       builder:
           (controller) => BottomAppBar(

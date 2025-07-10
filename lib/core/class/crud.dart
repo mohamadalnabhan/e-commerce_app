@@ -6,7 +6,10 @@ import 'package:flutter_application_1/core/functions/checkinternet.dart';
 import 'package:http/http.dart' as http;
 
 class Crud {
-  Future<Either<StatusRequest, Map>> postRequest(String linkUri,Map data,) async {
+  Future<Either<StatusRequest, Map>> postRequest(
+    String linkUri,
+    Map data,
+  ) async {
     try {
       if (await checkInternet()) {
         var response = await http.post(Uri.parse(linkUri), body: data);
@@ -19,7 +22,8 @@ class Crud {
       } else {
         return const Left(StatusRequest.offlineFailure);
       }
-    } catch (_) {
+    } catch (e) {
+      print("❌ Exception in postRequest: $e");
       return const Left(StatusRequest.serverException);
     }
   }

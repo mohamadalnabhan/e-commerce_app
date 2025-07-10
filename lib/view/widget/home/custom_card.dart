@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/controller/home_page_controller.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
-class CustomCard extends StatelessWidget {
+class CustomCard extends GetView<HomePageControllerImp> {
   final String cardTitle ;
   final String cardBody ;
   const CustomCard({super.key, required this.cardTitle, required this.cardBody});
@@ -15,6 +17,7 @@ class CustomCard extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
+            
             child: ListTile(
               title: Text(
                 cardTitle,
@@ -33,7 +36,9 @@ class CustomCard extends StatelessWidget {
           ),
           Positioned(
             top: -20,
-            right: -20,
+            
+            right:controller.Lang == "en" ? -20 : null,
+            left:controller.Lang == "ar" ? -20 : null,
             child: Container(
               height: 160,
               width: 160,

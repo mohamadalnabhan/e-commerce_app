@@ -7,6 +7,7 @@ class CustomTitleHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Text(
       title,
       style: TextStyle(

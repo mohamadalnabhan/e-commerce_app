@@ -14,6 +14,7 @@ class CategoriesModel {
       this.categoriesDatetime});
 
   CategoriesModel.fromJson(Map<String, dynamic> json) {
+      print("🧩 Parsing category JSON: $json");  // 🔍
     categoriesId = json['categories_id'];
     categoriesNameEn = json['categories_name_en'];
     categoriesNameAr = json['categories_name_ar'];

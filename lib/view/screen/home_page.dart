@@ -19,7 +19,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(HomePageControllerImp());
+  final controller = Get.isRegistered<HomePageControllerImp>()
+    ? Get.find<HomePageControllerImp>()
+    : Get.put(HomePageControllerImp());
+
     return  GetBuilder<HomePageControllerImp>(
         builder:
             (controller) => Container(

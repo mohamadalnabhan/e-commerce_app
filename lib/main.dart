@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/binding/initialbinding.dart';
+import 'package:flutter_application_1/controller/home_page_controller.dart';
+import 'package:flutter_application_1/core/class/crud.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
 import 'package:flutter_application_1/core/localization/change_local.dart';
 import 'package:flutter_application_1/core/localization/transliation.dart';
@@ -14,8 +16,9 @@ import 'package:image_pickers/image_pickers.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
-  await initialServices();
+   await initialServices();
+  Get.put(Crud()); // ⬅️ This must be before anything that uses it
+  Get.put(HomePageControllerImp(), permanent: true);
   runApp(const MyApp());
 }
 
@@ -30,6 +33,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return GetBuilder<ChangeLocal>(
       builder: (controller) {
         return GetMaterialApp(
