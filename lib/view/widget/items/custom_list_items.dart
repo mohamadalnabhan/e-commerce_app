@@ -29,10 +29,10 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          CachedNetworkImage(
+                          Hero(tag:"${itemsModel.itemsId!}" , child: CachedNetworkImage(
                             imageUrl: LinkApi.imageItems + "/" + itemsModel.itemsImage!,
                             height: 100,
-                          ),
+                          )),
                           SizedBox(height: 8,),
                              Text("${TranslateData(itemsModel.itemsNameEn, itemsModel.itemsNameAr)}",
                             style: TextStyle(
