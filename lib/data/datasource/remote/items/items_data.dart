@@ -7,10 +7,11 @@ class ItemsData {
 
   ItemsData(this.crud);
 
-  getData(String id) async {
+  getData(String id, String userid) async {
     try {
       var response = await crud.postRequest(LinkApi.itemsPage, {
         "id": id.toString(),
+        "userid": userid.toString(),
       });
       print("🟡 Raw response: $response");
 

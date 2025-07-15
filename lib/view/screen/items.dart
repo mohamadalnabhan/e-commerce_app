@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/controller/favorite_controller.dart';
 import 'package:flutter_application_1/controller/items_controller.dart';
 import 'package:flutter_application_1/core/class/handling_data_view.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
@@ -18,6 +19,7 @@ class Items extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ItemsControllerImp controller = Get.put(ItemsControllerImp());
+    FavoriteControllerImp controllerFav = Get.put(FavoriteControllerImp());
     return Scaffold(
       body: Container(
         padding: EdgeInsets.all(15),
@@ -45,6 +47,7 @@ class Items extends StatelessWidget {
                         childAspectRatio: 0.7,
                       ),
                       itemBuilder: (BuildContext context, index) {
+                        controllerFav.isFav[controller.data[index]['items_id']] = controller.data[index]['favorite'];
                         return CustomListItems(
                           itemsModel: ItemsModel.fromJson(
                             controller.data[index],

@@ -1,5 +1,6 @@
 import 'package:flutter_application_1/core/class/status_request.dart';
 import 'package:flutter_application_1/core/functions/data_handling.dart';
+import 'package:flutter_application_1/core/services/myservices.dart';
 import 'package:flutter_application_1/data/datasource/remote/items/items_data.dart';
 import 'package:flutter_application_1/data/model/items_model.dart';
 import 'package:get/get.dart';
@@ -17,7 +18,7 @@ abstract class ItemsController extends GetxController {
 class ItemsControllerImp extends ItemsController {
   List categories = [];
   int? selected;
-
+  MyServices myServices =  Get.find();
   List data = [];
   late String? categoriesId;
 
@@ -64,7 +65,7 @@ class ItemsControllerImp extends ItemsController {
     statusRequest = StatusRequest.loading;
     update();
 
-    var response = await itemsData.getData(categoriesId);
+    var response = await itemsData.getData(categoriesId , myServices.sharedPreferences.getString("id")!);
     print("================= items response $response");
 
     statusRequest = dataHandling(response);

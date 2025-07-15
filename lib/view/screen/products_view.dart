@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controller/products_controller.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
 import 'package:flutter_application_1/link_api.dart';
+import 'package:flutter_application_1/view/widget/productsdetails/price_and_count.dart';
+import 'package:flutter_application_1/view/widget/productsdetails/stack_products_details.dart';
+import 'package:flutter_application_1/view/widget/productsdetails/sub_items_list.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -26,35 +29,7 @@ class ProductsView extends StatelessWidget {
       body: Container(
         child: ListView(
           children: [
-            Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Container(
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: AppColor.primaryColor,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                Positioned(
-                  top: 50,
-                  right: Get.width / 8,
-                  left: Get.width / 8,
-
-                  child: Hero(
-                    tag: "${controller.itemsModel.itemsId}",
-                    child: CachedNetworkImage(
-                      imageUrl:
-                          LinkApi.imageItems +
-                          "/" +
-                          controller.itemsModel.itemsImage!,
-                      height: 250,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            StackProductsDetails(),
             Container(
               padding: EdgeInsets.all(20),
               child: Column(
@@ -67,7 +42,15 @@ class ProductsView extends StatelessWidget {
                       context,
                     ).textTheme.headlineMedium?.copyWith(color: AppColor.grey2),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 20),
+                  PriceAndCount(
+                    count: "0",
+                    price: "129.99",
+                    onRemove: () {},
+                    onAdd: () {},
+                  ),
+                  const SizedBox(height: 20),
+
                   Text(
                     "${controller.itemsModel.itemsDescriptionEn}"
                     "${controller.itemsModel.itemsDescriptionEn}"
@@ -84,37 +67,8 @@ class ProductsView extends StatelessWidget {
                     ).textTheme.headlineMedium?.copyWith(color: AppColor.grey2),
                   ),
                   const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      Container(
-                        margin: EdgeInsets.only(right: 10),
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.only(bottom: 5),
-                        height: 60,
-                        width: 90,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: AppColor.thirdColor),
-                          color: AppColor.thirdColor,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Text(
-                          'grey',
-                          style: TextStyle(color: AppColor.white, fontSize: 16),
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        padding: EdgeInsets.only(bottom: 5),
-                        height: 60,
-                        width: 90,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: AppColor.thirdColor),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Text('grey', style: TextStyle(fontSize: 16)),
-                      ),
-                    ],
-                  ),
+                    
+                  SubItemsList(),
                 ],
               ),
             ),
