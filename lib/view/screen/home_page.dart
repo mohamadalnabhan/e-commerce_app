@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/controller/home_page_controller.dart';
 import 'package:flutter_application_1/core/class/handling_data_view.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
+import 'package:flutter_application_1/core/constant/app_routes.dart';
 import 'package:flutter_application_1/core/functions/data_handling.dart';
 import 'package:flutter_application_1/link_api.dart';
 import 'package:flutter_application_1/view/widget/custom_appbar.dart';
@@ -33,6 +34,10 @@ class HomePage extends StatelessWidget {
                     appBarHint: "find product",
                     onPressed: () {},
                     onPressedSearch: () {},
+                    onPressedFavorite: () {
+                      Get.toNamed(AppRoutes.myFavPage);
+
+                    },
                   ),
                   const CustomCard(
                     cardTitle: "summer Offer ",

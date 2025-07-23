@@ -17,6 +17,7 @@ import 'package:flutter_application_1/view/screen/home_page.dart';
 import 'package:flutter_application_1/view/screen/home_screen.dart';
 import 'package:flutter_application_1/view/screen/items.dart';
 import 'package:flutter_application_1/view/screen/language.dart';
+import 'package:flutter_application_1/view/screen/my_favorite_page.dart';
 
 import 'package:flutter_application_1/view/screen/onboarding.dart';
 import 'package:flutter_application_1/view/screen/products_view.dart';
@@ -26,26 +27,26 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:image_pickers/image_pickers.dart';
 import 'package:path/path.dart';
 
-
-
 List<GetPage<dynamic>> getPages = [
-   GetPage(name: "/", page: () => MyLanguage(),
-   middlewares: [MyMiddleWare()]),
-    // GetPage(name: "/", page: () => TestView(),),
-  GetPage(name: AppRoutes.login, page: () => Login(),),
+  GetPage(name: "/", page: () => MyLanguage(), middlewares: [MyMiddleWare()]),
+  // GetPage(name: "/", page: () => TestView(),),
+  GetPage(name: AppRoutes.login, page: () => Login()),
   GetPage(name: AppRoutes.onboarding, page: () => Onboarding()),
   GetPage(name: AppRoutes.signup, page: () => Signup()),
   GetPage(name: AppRoutes.forgetPassword, page: () => Forgetpassword()),
   GetPage(name: AppRoutes.verifyCode, page: () => Verifycode()),
   GetPage(name: AppRoutes.resetPassowrd, page: () => Resetpassword()),
   GetPage(name: AppRoutes.successSignup, page: () => Successsignup()),
-  GetPage(name: AppRoutes.resetPasswordSuccess, page: () => Successresetpassword()),
+  GetPage(
+    name: AppRoutes.resetPasswordSuccess,
+    page: () => Successresetpassword(),
+  ),
   GetPage(name: AppRoutes.verifySignup, page: () => Verifysignup()),
-  GetPage(name: AppRoutes.homePage, page: () => HomeScreen(),),
-  GetPage(name: AppRoutes.itemsPage, page: () => Items(),),
-    GetPage(name: AppRoutes.productsView, page: () => ProductsView(),),
+  GetPage(name: AppRoutes.homePage, page: () => HomeScreen()),
+  GetPage(name: AppRoutes.itemsPage, page: () => Items()),
+  GetPage(name: AppRoutes.productsView, page: () => ProductsView()),
+  GetPage(name: AppRoutes.myFavPage, page: () => MyFavoritePage()),
 ];
-
 
 // Map<String, Widget Function(BuildContext)> routes = {
 //   AppRoutes.login: (context) => Login(),

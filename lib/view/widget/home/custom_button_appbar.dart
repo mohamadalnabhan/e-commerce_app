@@ -6,13 +6,13 @@ import 'package:flutter_application_1/core/constant/app_color.dart';
 class CustomButtonAppbar extends StatelessWidget {
   final void Function() onPressed;
   final IconData iconData;
-  final String buttonTitle;
+
 final  bool? active ;
    CustomButtonAppbar({
     Key? key,
     required this.onPressed,
     required this.iconData,
-    required this.buttonTitle,
+ 
     required this.active,
   }) : super(key: key);
 
@@ -24,7 +24,7 @@ final  bool? active ;
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(iconData, color: active == true ? AppColor.primaryColor : AppColor.black),
-          Text(buttonTitle, style: TextStyle(color: active == true ? AppColor.primaryColor : AppColor.black)),
+          // Text(buttonTitle, style: TextStyle(color: active == true ? AppColor.primaryColor : AppColor.black)),
         ],
       ),
     );

@@ -30,6 +30,7 @@ class Items extends StatelessWidget {
               appBarHint: "items search",
               onPressed: () {},
               onPressedSearch: () {},
+              onPressedFavorite: () {},
             ),
             const SizedBox(height: 20),
             CustomListCategoriesItems(),

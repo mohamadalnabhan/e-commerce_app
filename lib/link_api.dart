@@ -10,6 +10,7 @@ class LinkApi {
   static String Signup = "$server/auth/signup.php";
   static String verifyCodeSignup = "$server/auth/verifycode.php";
   static String Login = "$server/auth/login.php";
+  static String resendCode = "$server/auth/resend.php";
   //================ forget password
 
   static String resetPassword = "$server/forgetpassword/resetpassword.php";
@@ -19,4 +20,10 @@ class LinkApi {
   ///// home
   static String homePage = "$server/home.php";
   static String itemsPage = "$server/items/items.php";
+
+  /////// favorite
+  static String favAdd = "$server/favorite/add.php";
+  static String favDelete = "$server/favorite/delete.php";
+  static String favView = "$server/favorite/view_fav.php";
+  static String favPageDelete = "$server/favorite/deletefromfav.php";
 }

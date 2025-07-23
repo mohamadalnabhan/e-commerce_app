@@ -27,8 +27,8 @@ class CustomBottomAppbar extends StatelessWidget {
                         onPressed: () {
                           controller.changePage(i);
                         },
-                        iconData: Icons.home,
-                        buttonTitle: controller.titlePagesBottomAppbar[i],
+                        iconData: controller.titlePagesBottomAppbar[i]['icons'],
+                        // buttonTitle: controller.titlePagesBottomAppbar[i],
                         active: controller.currnetPage == i ? true : false,
                       );
                 }),

@@ -56,7 +56,9 @@ void onInit() {
   super.onInit();
 }
 
-
+resend(){
+  verifyCodeSignup.resendData(email!);
+}
   @override
   verifyCodee() {
     // TODO: implement verifyCodee

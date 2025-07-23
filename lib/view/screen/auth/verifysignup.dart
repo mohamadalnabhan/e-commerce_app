@@ -23,7 +23,7 @@ class Verifysignup extends GetView<ChangeLocal> {
 
   @override
   Widget build(BuildContext context) {
-      Get.put(VerifySignupcontrollerImp());
+    Get.put(VerifySignupcontrollerImp());
     return Scaffold(
       appBar: AppBar(
         title: Text("verification code "),
@@ -32,43 +32,56 @@ class Verifysignup extends GetView<ChangeLocal> {
       ),
       body: GetBuilder<VerifySignupcontrollerImp>(
         builder:
-              (controller)=> HandlingDataRequest(statusRequest: controller.statusRequest  , widget:  Container(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 15,
-                        horizontal: 35,
-                      ),
-                      child: ListView(
-                      
-                        children: [
-                          const SizedBox(height: 30),
-                          Customtexttitleauth(textTilte: "check code"),
-                          const SizedBox(height: 20),
-                          Customtextbodyauth(
-                            textBody:
-                                "please enter the verification code you recieved in your email \n to complete your signup process"
-                                    .tr,
+            (controller) => HandlingDataRequest(
+              statusRequest: controller.statusRequest,
+              widget: Container(
+                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+                child: ListView(
+                  children: [
+                    const SizedBox(height: 30),
+                    Customtexttitleauth(textTilte: "check code"),
+                    const SizedBox(height: 20),
+                    Customtextbodyauth(
+                      textBody:
+                          "please enter the verification code you recieved in your email \n to complete your signup process"
+                              .tr,
+                    ),
+                    const SizedBox(height: 20),
+                    OtpTextField(
+                      borderRadius: BorderRadius.circular(11),
+                      numberOfFields: 5,
+                      borderColor: Colors.black,
+                      //set to true to show as box or false to show as dash
+                      showFieldAsBox: true,
+                      //runs when a code is typed in
+                      onCodeChanged: (String code) {
+                        //handle validation or checks here
+                      },
+                      //runs when every textfield is filled
+                      onSubmit: (String verificationCode) {
+                        controller.goSuccessSignup(verificationCode);
+                      }, // end onSubmit
+                    ),
+                    const SizedBox(height: 30),
+                    InkWell(
+                      onTap: () {
+                        controller.resend() ; 
+                      },
+                      child: Center(
+                        child: Text(
+                          "Resend verification code",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: AppColor.primaryColor,
                           ),
-                          const SizedBox(height: 20),
-                          OtpTextField(
-                            borderRadius: BorderRadius.circular(11),
-                            numberOfFields: 5,
-                            borderColor: Colors.black,
-                            //set to true to show as box or false to show as dash
-                            showFieldAsBox: true,
-                            //runs when a code is typed in
-                            onCodeChanged: (String code) {
-                              //handle validation or checks here
-                            },
-                            //runs when every textfield is filled
-                            onSubmit: (String verificationCode) {
-                              controller.goSuccessSignup(verificationCode);
-                            }, // end onSubmit
-                          ),
-                        ],
+                        ),
                       ),
                     ),
+                  ],
+                ),
+              ),
+            ),
       ),
-      )
     );
   }
 }

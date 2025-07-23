@@ -13,4 +13,5 @@ class AppRoutes {
     static final String homePage = "/homePage";
     static final String itemsPage = "/items";
     static final String productsView = "/productsView";
+    static final String myFavPage = "/myFavoritePage";
 }

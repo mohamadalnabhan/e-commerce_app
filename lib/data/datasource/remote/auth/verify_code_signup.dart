@@ -16,6 +16,18 @@ VerifyCodeSignupData(this.crud) ;
       print("$e");
     }
   }
+
+resendData(String email)async{ 
+    try {
+      var response = await crud.postRequest(LinkApi.resendCode, {
+        "email": email,
+      });
+      return response.fold((l) => l, (r) => r);
+    } catch (e) {
+      print("$e");
+    }
+  
+}
 }
 //linksignup 
 
