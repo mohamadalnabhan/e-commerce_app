@@ -11,8 +11,8 @@ class PriceAndCount extends StatelessWidget {
     super.key,
     required this.count,
     required this.price,
-    required onRemove,
-    required onAdd,
+    required this.onRemove,
+    required this.onAdd,
   });
 
   @override

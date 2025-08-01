@@ -26,4 +26,13 @@ class LinkApi {
   static String favDelete = "$server/favorite/delete.php";
   static String favView = "$server/favorite/view_fav.php";
   static String favPageDelete = "$server/favorite/deletefromfav.php";
+
+
+  //////// cart
+  ///
+  ///
+   static String cartView = "$server/cart/view.php";
+  static String cartAdd = "$server/cart/add.php";
+  static String cartDelete = "$server/cart/delete.php";
+  static String cartCountItems = "$server/cart/get_count_items.php";
 }

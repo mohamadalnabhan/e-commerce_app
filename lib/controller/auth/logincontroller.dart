@@ -39,52 +39,55 @@ class logincontrollerImp extends loginController {
 
   @override
   login() async {
-    var formdata = formstate.currentState;
+    
+  var formdata = formstate.currentState;
 
-    if (formdata != null && formdata!.validate()) {
-      statusRequest = StatusRequest.loading;
-      update();
-      var response = await loginData.postdata(email.text, password.text);
-      print("================= $response");
-      statusRequest = dataHandling(response);
-      if (StatusRequest.success == statusRequest) {
-        if (response['data']['users_id'].toString() == "1") {
-          if (response['status'] == "success") {
-            myServices.sharedPreferences.setString(
-              'id',
-              response['data']['users_id'].toString(),
-            );
-            myServices.sharedPreferences.setString(
-              'username',
-              response['data']['users_name'],
-            );
-            myServices.sharedPreferences.setString(
-              'password',
-              response['data']['users_password'],
-            );
-            myServices.sharedPreferences.setString(
-              'phone',
-              response['data']['users_phone'].toString(),
-            );
-            myServices.sharedPreferences.setString('step', '2');
-            Get.offAllNamed(AppRoutes.homePage);
-          } else {
-            Get.toNamed(
-              AppRoutes.verifySignup,
-              arguments: {"email": email.text},
-            );
-          }
-        } else {
-          Get.defaultDialog(
-            title: "warrning",
-            middleText: "email or password is incorrect ",
-          );
-          statusRequest = StatusRequest.failure;
-        }
+  if (formdata != null && formdata.validate()) {
+    statusRequest = StatusRequest.loading;
+    update();
+    var response = await loginData.postdata(email.text, password.text);
+    print("LOGIN RESPONSE: $response");
+    statusRequest = dataHandling(response);
+
+    if (StatusRequest.success == statusRequest) {
+      if (response['status'] == "success" && response['data'] != null) {
+        var userData = response['data'];
+
+        myServices.sharedPreferences.setString(
+          'id',
+          userData['users_id'].toString(),
+        );
+        myServices.sharedPreferences.setString(
+          'username',
+          userData['users_name'],
+        );
+        myServices.sharedPreferences.setString(
+          'password',
+          userData['users_password'],
+        );
+        myServices.sharedPreferences.setString(
+          'phone',
+          userData['users_phone'].toString(),
+        );
+        myServices.sharedPreferences.setString('step', '2');
+
+        Get.offAllNamed(AppRoutes.homePage);
+      } else {
+        // Show verification screen if not verified
+        Get.toNamed(
+          AppRoutes.verifySignup,
+          arguments: {"email": email.text},
+        );
       }
-      update();
-    } else {}
+    } else {
+      Get.defaultDialog(
+        title: "Warning",
+        middleText: "Email or password is incorrect",
+      );
+    }
+    update();
   }
+}
 
   @override
   void onInit() async {

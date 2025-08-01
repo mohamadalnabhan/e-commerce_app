@@ -1,7 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controller/products_controller.dart';
+import 'package:flutter_application_1/core/class/handling_data_view.dart';
 import 'package:flutter_application_1/core/constant/app_color.dart';
+import 'package:flutter_application_1/core/constant/app_routes.dart';
+import 'package:flutter_application_1/core/functions/data_handling.dart';
 import 'package:flutter_application_1/link_api.dart';
 import 'package:flutter_application_1/view/widget/productsdetails/price_and_count.dart';
 import 'package:flutter_application_1/view/widget/productsdetails/stack_products_details.dart';
@@ -22,11 +25,14 @@ class ProductsView extends StatelessWidget {
         child: MaterialButton(
           color: AppColor.primaryColor,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(9)),
-          onPressed: () {},
-          child: Text("Add To Cart ", style: TextStyle(color: AppColor.white)),
+          onPressed: () {
+            controller.cartController.refreshPage();
+            Get.toNamed(AppRoutes.Cart);
+          },
+          child: Text("GO To Cart ", style: TextStyle(color: AppColor.white)),
         ),
       ),
-      body: Container(
+      body: GetBuilder<ProductsControllerImp>(builder: (controller)=>HandlingDataView(statusRequest: controller.statusRequest, widget: Container(
         child: ListView(
           children: [
             StackProductsDetails(),
@@ -44,10 +50,16 @@ class ProductsView extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   PriceAndCount(
-                    count: "0",
-                    price: "129.99",
-                    onRemove: () {},
-                    onAdd: () {},
+                    count: "${controller.countItems}",
+                    price: "${controller.itemsModel.itemsPrice}",
+                    onRemove: () {
+                      print("removed");
+                     controller.delete() ; 
+                    },
+                    onAdd: () {
+                      print("added");
+                      controller.add() ; 
+                    },
                   ),
                   const SizedBox(height: 20),
 
@@ -67,14 +79,14 @@ class ProductsView extends StatelessWidget {
                     ).textTheme.headlineMedium?.copyWith(color: AppColor.grey2),
                   ),
                   const SizedBox(height: 10),
-                    
+
                   SubItemsList(),
                 ],
               ),
             ),
           ],
         ),
-      ),
+      ),))
     );
   }
 }

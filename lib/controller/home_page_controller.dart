@@ -47,9 +47,8 @@ String? Lang ;
     statusRequest = dataHandling(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
-        categories.addAll(response['categories']);
-        
-        items.addAll(response['items']);
+        categories.addAll(response['categories']['data']);
+        items.addAll(response['items']['data']);
       }
       update() ; 
     } else {

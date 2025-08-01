@@ -13,6 +13,7 @@ import 'package:flutter_application_1/view/screen/auth/login.dart';
 
 import 'package:flutter_application_1/view/screen/auth/signup.dart';
 import 'package:flutter_application_1/view/screen/auth/verifysignup.dart';
+import 'package:flutter_application_1/view/screen/cart.dart';
 import 'package:flutter_application_1/view/screen/home_page.dart';
 import 'package:flutter_application_1/view/screen/home_screen.dart';
 import 'package:flutter_application_1/view/screen/items.dart';
@@ -29,7 +30,7 @@ import 'package:path/path.dart';
 
 List<GetPage<dynamic>> getPages = [
   GetPage(name: "/", page: () => MyLanguage(), middlewares: [MyMiddleWare()]),
-  // GetPage(name: "/", page: () => TestView(),),
+  GetPage(name: AppRoutes.Cart, page: () => Cart()),
   GetPage(name: AppRoutes.login, page: () => Login()),
   GetPage(name: AppRoutes.onboarding, page: () => Onboarding()),
   GetPage(name: AppRoutes.signup, page: () => Signup()),
